@@ -1,0 +1,14 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "./deploy/Dockerfile"
+
+[deploy]
+startCommand = "node dist/cluster.js"
+healthcheckPath = "/healthz"
+healthcheckTimeout = 15
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
+
+[[services]]
+name = "rate-limiter-node"
+replicas = 2

@@ -1,0 +1,36 @@
+{
+  "name": "@manan/rate-limiter-sdk",
+  "version": "1.0.0",
+  "description": "SDK for the rate limiter service — Fastify plugin and Express middleware",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --outDir dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["rate-limiter", "fastify", "express", "middleware"],
+  "author": "Manan",
+  "license": "MIT",
+  "peerDependencies": {
+    "fastify": ">=4",
+    "express": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "fastify": { "optional": true },
+    "express": { "optional": true }
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "tsup": "^8",
+    "fastify": "^4",
+    "@types/express": "^4"
+  }
+}
