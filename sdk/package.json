@@ -1,7 +1,7 @@
 {
-  "name": "@manan/rate-limiter-sdk",
+  "name": "@whomj/rate-limiter-sdk",
   "version": "1.0.0",
-  "description": "SDK for the rate limiter service — Fastify plugin and Express middleware",
+  "description": "SDK for the distributed rate limiter service — Fastify plugin and Express middleware with HMAC-SHA256 auth, fail-open semantics, and X-RateLimit header support",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -11,14 +11,48 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --outDir dist",
+    "build": "tsup src/index.ts --format esm --dts --outDir dist --clean",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["rate-limiter", "fastify", "express", "middleware"],
-  "author": "Manan",
+  "keywords": [
+    "rate-limiter",
+    "rate-limiting",
+    "fastify",
+    "fastify-plugin",
+    "express",
+    "middleware",
+    "redis",
+    "distributed",
+    "multi-tenant",
+    "api-gateway",
+    "throttle",
+    "429",
+    "typescript"
+  ],
+  "author": {
+    "name": "Manan Jain",
+    "email": "manan.nitdl@gmail.com",
+    "url": "https://github.com/Manan-jn"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Manan-jn/rate-limiter.git",
+    "directory": "sdk"
+  },
+  "homepage": "https://github.com/Manan-jn/rate-limiter#sdk--3-line-integration",
+  "bugs": {
+    "url": "https://github.com/Manan-jn/rate-limiter/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "peerDependencies": {
     "fastify": ">=4",
     "express": ">=4"

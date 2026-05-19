@@ -3,7 +3,7 @@
 <div align="center">
 
 [![CI](https://github.com/Manan-jn/rate-limiter/actions/workflows/ci.yml/badge.svg)](https://github.com/Manan-jn/rate-limiter/actions)
-[![npm](https://img.shields.io/npm/v/@manan/rate-limiter-sdk?color=red&label=%40manan%2Frate-limiter-sdk)](https://www.npmjs.com/package/@manan/rate-limiter-sdk)
+[![npm](https://img.shields.io/npm/v/@whomj/rate-limiter-sdk?color=red&label=%40whomj%2Frate-limiter-sdk)](https://www.npmjs.com/package/@whomj/rate-limiter-sdk)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x%20strict-blue)](./tsconfig.json)
 [![Redis](https://img.shields.io/badge/Redis-7%20Lua%20atomic-red)](./src/store/lua)
 
@@ -61,7 +61,7 @@ P99 stays flat at 8–9ms across the sweet spot (c=75–150), confirming Redis s
 | P50 at peak | **2.3ms** | c3-std-8, wrk c=200 |
 | P99 at peak | **9.7ms** | c3-std-8, 120s stress |
 | Architecture optimization | **4 RTTs → 1** | Master Lua script consolidation |
-| SDK | **published** | `@manan/rate-limiter-sdk` on npm |
+| SDK | **published** | `@whomj/rate-limiter-sdk` on npm |
 
 ---
 
@@ -145,12 +145,12 @@ curl -X PUT http://localhost:8080/api/v1/tenants/acme/rules/<ruleId> \
 ## SDK — 3-Line Integration
 
 ```bash
-npm install @manan/rate-limiter-sdk
+npm install @whomj/rate-limiter-sdk
 ```
 
 **Fastify:**
 ```typescript
-import { rateLimitPlugin } from '@manan/rate-limiter-sdk';
+import { rateLimitPlugin } from '@whomj/rate-limiter-sdk';
 await app.register(rateLimitPlugin, {
   serviceUrl: process.env.RATE_LIMITER_URL,
   tenantId: 'acme-corp',
@@ -160,7 +160,7 @@ await app.register(rateLimitPlugin, {
 
 **Express:**
 ```typescript
-import { expressRateLimit } from '@manan/rate-limiter-sdk';
+import { expressRateLimit } from '@whomj/rate-limiter-sdk';
 app.use(expressRateLimit({ serviceUrl, tenantId: 'acme-corp', keyExtractor: 'ip' }));
 ```
 
