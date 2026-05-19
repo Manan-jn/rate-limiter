@@ -1,6 +1,6 @@
 {
   "name": "@whomj/rate-limiter-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SDK for the distributed rate limiter service — Fastify plugin and Express middleware with HMAC-SHA256 auth, fail-open semantics, and X-RateLimit header support",
   "type": "module",
   "main": "./dist/index.js",
@@ -58,8 +58,12 @@
     "express": ">=4"
   },
   "peerDependenciesMeta": {
-    "fastify": { "optional": true },
-    "express": { "optional": true }
+    "fastify": {
+      "optional": true
+    },
+    "express": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "typescript": "^5",
